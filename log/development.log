@@ -1,0 +1,36 @@
+Started GET "/aaaaa" for 127.0.0.1 at 2022-10-03 08:48:43 +0700
+  [1m[35m (5.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/aaaaa"):
+  
+Started GET "/" for 127.0.0.1 at 2022-10-03 08:48:45 +0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/macintoshhd/.rvm/gems/ruby-3.0.0/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/macintoshhd/.rvm/gems/ruby-3.0.0/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.4ms | Allocations: 223)
+Completed 200 OK in 23ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 2491)
+
+
+Started GET "/" for 10.30.30.186 at 2022-10-03 08:48:51 +0700
+Cannot render console from 10.30.30.186! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/macintoshhd/.rvm/gems/ruby-3.0.0/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/macintoshhd/.rvm/gems/ruby-3.0.0/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb (Duration: 12.7ms | Allocations: 219)
+Completed 200 OK in 27ms (Views: 16.9ms | ActiveRecord: 0.0ms | Allocations: 968)
+
+
+Started GET "/" for 10.30.30.79 at 2022-10-03 08:49:16 +0700
+Cannot render console from 10.30.30.79! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/macintoshhd/.rvm/gems/ruby-3.0.0/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/macintoshhd/.rvm/gems/ruby-3.0.0/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.3ms | Allocations: 45)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 403)
+
+
+Started GET "/" for ::1 at 2022-10-04 15:25:55 +0700
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/macintoshhd/.rvm/gems/ruby-3.0.0/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/macintoshhd/.rvm/gems/ruby-3.0.0/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.8ms | Allocations: 418)
+Completed 200 OK in 32ms (Views: 13.5ms | ActiveRecord: 0.0ms | Allocations: 3101)
+
+
