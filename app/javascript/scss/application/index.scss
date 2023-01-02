@@ -1,0 +1,45 @@
+//library
+@import '~bootstrap/scss/bootstrap';
+@import '~swiper/swiper-bundle';
+
+// app/javascript/stylesheets/application.scss
+@import '@/fonts/nunito';
+@import './mixin';
+@import './variables';
+@import './common';
+
+// components
+@import './components/spacing';
+@import './components/typography';
+@import './components/flash';
+@import './components/form';
+@import './components/header';
+@import './components/navbar';
+@import './components/footer';
+@import './components/button';
+@import './components/pagination';
+
+@import './components/dashboard/header';
+@import './components/dashboard/modal';
+@import './components/dashboard/helper-profile';
+@import './components/dashboard/profile';
+@import './components/dashboard/tabs';
+@import './components/dashboard/count';
+@import './components/dashboard/slider';
+@import './components/dashboard/jobs';
+
+// views
+@import './views/home';
+@import './views/devise';
+@import './views/authentication';
+@import './views/other';
+@import './views/who-we-are';
+@import './views/resources';
+@import './views/packages';
+// Dashboard employers
+@import './views/dashboard/home';
+@import './views/dashboard/helpers';
+@import './views/dashboard/jobs';
+@import './views/dashboard/employers';
+@import './views/dashboard/payment';
+@import './views/dashboard/conversation';

@@ -1,0 +1,153 @@
+.helper {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  border-radius: 20px;
+  border: solid 1px $light-grey;
+  background-color: $white;
+  margin-bottom: 20px;
+
+  &:hover, &:active {
+    border: solid 2px $dark-cyan;
+  }
+
+  a { text-decoration: none; }
+
+  @include e('info') {
+    @include flex-align(center);
+    margin-bottom: 17px;
+
+    .info {
+      @include e('avatar') {
+        width: 90px;
+        height: 90px;
+        border-radius: 16.4px;
+        margin-right: 15px;
+
+        img {
+          width: 90px;
+          height: 90px;
+          border-radius: 16.4px;
+          object-fit: cover;
+        }
+      }
+
+      @include e('content') {
+        @include m('name') {
+          @include flex-align(center);
+          @include font-style($font-size-18, $font-weight-600, 24, $black);
+          .name {
+            @include m('checked') {
+              background: url('~@/images/icons/checked-blue.png') no-repeat center center;
+              background-size: contain;
+              width: 14px;
+              height: 14px;
+              margin-left: 6px;
+            }
+          }
+        }
+
+        @include m('fullname') {
+          @include font-style($font-size-14, $font-weight-400, 19, $black);
+          margin-bottom: 10px;
+        }
+
+        @include m('status') {
+          @include font-style($font-size-13, $font-weight-400, 18, $black);
+        }
+      }
+
+      @include e('favorite') {
+        background: url('~@/images/icons/favorite.svg') no-repeat center center;
+        width: 19px;
+        height: 19px;
+        background-size: contain;
+        flex: auto;
+      }
+
+      @include e('unfavorite') {
+        background: url('~@/images/icons/un-favorite.svg') no-repeat center center;
+        width: 19px;
+        height: 19px;
+        background-size: contain;
+        flex: auto;
+      }
+    }
+  }
+
+  @include e('national') {
+    @include flex-align(center);
+    margin-bottom: 18px;
+
+    @include m('item') {
+      margin-right: 40px;
+
+      &:last-child {
+        margin-right: 0px;
+      }
+
+      .item {
+        @include e('title') {
+          @include font-style($font-size-14, $font-weight-600, 22, $black);
+        }
+
+        @include e('content') {
+          @include flex-align(center);
+          @include font-style($font-size-14, $font-weight-400, 22, $black);
+          white-space: nowrap;
+          img { height: 14px; margin-right: 8px; }
+        }
+      }
+    }
+  }
+
+  @include e('about') {
+    h5 { @include font-style($font-size-14, $font-weight-600, 22, $black); }
+    p {
+      @include font-style($font-size-14, $font-weight-400, 22, $deep-grey);
+      height: 65px;
+      overflow-y: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  @include e('skills') {
+    .skills {
+      @include e('title') {
+       @include font-style($font-size-14, $font-weight-600, 22, $deep-grey);
+      }
+
+      @include e('content') {
+        @include flex-justify(flex-start);
+        flex-wrap: wrap;
+
+        .skill {
+          @include e('item') {
+            @include flex-align(center);
+            color: $dark-cyan;
+            height: 36px;
+            padding: 9px 10px 8px;
+            border-radius: 5px;
+            background-color: $dark-cyan-hex-1;
+            margin-right: 5px;
+            margin-top: 5px;
+
+            &:last-child {
+              margin-right: 0px;
+            }
+
+            @include m('special') {
+              background: url('~@/images/icons/star-cyan.svg') no-repeat center center;
+              width: 14px;
+              height: 14px;
+              background-size: contain;
+              margin-right: 6px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

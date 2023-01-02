@@ -1,0 +1,126 @@
+.job {
+  width: 100%;
+  background-color: $white;
+  border: 1px solid $grey;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+
+  &.detail {
+    border: none;
+    margin-bottom: 0px;
+  }
+
+  &.expired {
+    background-color: $light-grey;
+  }
+
+  @include e('info') {
+    @include flex-group-justify(space-between, center);
+
+    .info {
+      @include flex-align(center);
+
+      @include e('avatar') {
+        margin-right: 20px;
+
+        img {
+          width: 80px;
+          height: 80px;
+          border-radius: 20px;
+          object-fit: cover;
+        }
+      }
+
+      @include e('content') {
+        @include font-style($font-size-20, $font-weight-600, 30, $black);
+
+        @include m('name') {
+          color: $dark-cyan;
+        }
+      }
+    }
+
+    .more {
+      width: 26px;
+      height: 6px;
+      object-fit: contain;
+    }
+  }
+
+  @include e('serial-key') {
+    @include font-style($font-size-12, $font-weight-400, 16, $black);
+    margin-top: 10px;
+    margin-bottom: 12px;
+  }
+
+  @include e('basic-info') {
+    @include flex-align(center);
+    margin-bottom: 13px;
+
+    @include m('item') {
+      margin-right: 20px;
+
+      &:last-child {
+        margin-right: 0px;
+      }
+
+      .item {
+        @include e('title') {
+          @include font-style($font-size-14, $font-weight-600, 22, $black);
+        }
+
+        @include e('content') {
+          @include flex-align(center);
+          @include font-style($font-size-14, $font-weight-400, 22, $black);
+          white-space: nowrap;
+          img { height: 14px; margin-right: 8px; }
+
+          @include m('value') {
+            &.location {
+              white-space: nowrap;
+              width: 105px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include e('description') {
+    h5 { @include font-style($font-size-14, $font-weight-600, 22, $black); }
+
+    p {
+      @include font-style($font-size-14, $font-weight-400, 22, $black);
+      height: 65px;
+      overflow-y: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  @include e('action') {
+    @include flex-group-justify(space-between, center);
+
+    @include m('detail') {
+      @include font-style($font-size-16, $font-weight-600, 22, $dark-cyan);
+      text-align: center;
+      text-decoration: none;
+      background: $dark-cyan-hex-1;
+      border-radius: 10px;
+      padding: 11px 18px;
+
+      &:hover {
+        color: $dark-cyan;
+      }
+    }
+
+    @include m('post') {
+      @include font-style($font-size-14, $font-weight-400, 19, $light-black);
+      font-style: italic;
+    }
+  }
+}

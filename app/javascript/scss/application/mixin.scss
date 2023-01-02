@@ -1,0 +1,124 @@
+// ============== Bem ruler ===============
+/// element
+@mixin e($element) {
+  &__#{$element} {
+      @content;
+  }
+}
+/// modifier
+@mixin m($modifier) {
+  &--#{$modifier} {
+      @content;
+  }
+}
+
+// ============== Settings responsive ===============
+$breakpoints: (
+  'pc': 'screen and (min-width: 769px)',
+  'sp': 'screen and (min-width: 321px) and (max-width: 768px)'
+) !default;
+
+@mixin res_for($breakpoint: pc) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// Flex
+@mixin flex-justify($justifyContent) {
+  display: flex;
+  justify-content: $justifyContent;
+}
+
+@mixin flex-align($alignItems) {
+  display: flex;
+  align-items: $alignItems;
+}
+
+@mixin flex-direction($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+@mixin flex-group-justify($justifyContent, $alignItems) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+@mixin flex-group-decoration($decoration, $alignItems) {
+  display: flex;
+  flex-direction: $decoration;
+  align-items: $alignItems;
+}
+
+// font-style
+@mixin font-style($fontSize, $fontWeight, $lineHeight : $fontSize ,$color) {
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: #{$lineHeight}px;
+  color: $color
+}
+
+// export img's screen example
+@mixin screen($width, $height) {
+  width: $width;
+  height: $height;
+  border-radius: 20px;
+  overflow-wrap: auto;
+  object-fit: fill;
+
+  & > img {
+    width: 100%;
+    height: $height;
+    object-fit: fill;
+    border-radius: 20px;
+  }
+}
+
+// Add retangle in heading other pages
+@mixin retangle-heading($height) {
+  .rectangle {
+    width: 93%;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    position: absolute;
+    left: 50%;
+    top: -20px;
+    transform: translateX(-50%);
+    z-index: -1;
+    padding: 20px 30px 65px;
+
+    @include m('grey') {
+      height: $height;
+      background-color: $thin-grey;
+    }
+
+    @include m('gradient') {
+      border-radius: 30px;
+      height: $height;
+      top: -80px;
+      background-image: linear-gradient(to right, $dark-cyan, $pink);
+    }
+  }
+}
+
+// Set icons nav_link for dashboard
+$url_paths: (
+  'jobs': '~@/images/icons/jobs.png',
+  'jobs-active': '~@/images/icons/jobs-active.png',
+  'helpers': '~@/images/icons/helpers.png',
+  'helpers-active': '~@/images/icons/helpers-active.png',
+  'payment': '~@/images/icons/payment.png',
+  'payment-active': '~@/images/icons/payment-active.png'
+) !default;
+
+@mixin nav_link_for($option, $url_path: $option) {
+  @include m($option) {
+    background: url(#{map-get($url_paths, $url_path)}) no-repeat center center;
+    width: 19px;
+    height: 15px;
+    margin-right: 10px;
+    background-size: contain;
+  }
+}

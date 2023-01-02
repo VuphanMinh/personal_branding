@@ -1,0 +1,22 @@
+.wrap-header {
+  position: relative;
+  width: 100%;
+
+  @include e('rectangle') {
+    width: 93%;
+    height: 84px;
+    border-radius: 30px;
+    background-color: $thin-grey;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    padding: 20px 30px 65px;
+  }
+
+  @include e('content') {
+    width: 100%;
+    padding-top: 8px;
+    z-index: 0;
+  }
+}

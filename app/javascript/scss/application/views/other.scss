@@ -1,0 +1,133 @@
+#faq-container, #policy-container, #terms-conditions-container {
+  position: relative;
+
+  @include retangle-heading(240px);
+
+  @include res_for(sp) {
+    @include retangle-heading(150px);
+  }
+}
+
+.other {
+  margin-left: calc(100% - 80% + 19px);
+  margin-right: calc(100% - 80% + 19px);
+
+  @include res_for(sp) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  @include e('heading') {
+    @include font-style($font-size-90, $font-weight-700, 90, $dark);
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    margin: 65px auto;
+    margin-bottom: 125px;
+
+    @include res_for(sp) {
+      @include font-style($font-size-30, $font-weight-700, 30, $dark);
+      margin-bottom: 50px;
+    }
+  }
+
+  @include e('title') {
+    @include font-style($font-size-30, $font-weight-700, 30, $dark);
+    margin-bottom: 20px;
+
+    @include res_for(sp) {
+      @include font-style($font-size-20, $font-weight-700, 20, $dark);
+      text-align: left;
+      margin-bottom: 10px;
+    }
+  }
+
+  @include e('content') {
+    @include font-style($font-size-20, inherit, 32, inherit);
+
+    @include res_for(sp) {
+      @include font-style($font-size-16, inherit, 20, inherit);
+    }
+
+    label {
+      font-weight: $font-weight-700;
+      color: $dark;
+    }
+
+    p {
+      font-weight: $font-weight-400;
+      color: $deep-grey;
+
+      a {
+        color: $blue;
+        text-decoration: underline;
+
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+      border-radius: 30px;
+      object-fit: cover;
+    }
+
+    .content {
+      @include e('card') {
+        width: 100%;
+        margin-bottom: 10px;
+
+        &:last-child {
+          margin-bottom: 0px;
+        }
+
+        @include m('tab') {
+          @include font-style($font-size-20, $font-weight-700, 32, $dark);
+          text-decoration: none;
+          display: block;
+          width: 100%;
+          background-color: $thin-grey;
+          border-radius: 10px;
+          padding: 20px;
+
+          @include res_for(sp) {
+            @include font-style($font-size-16, $font-weight-700, 20, $dark);
+          }
+
+          img {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+
+            @include res_for(sp) {
+              width: 15px;
+              height: 15px;
+            }
+          }
+
+          &.collapsed {
+            img {
+              transform: rotate(180deg);
+              transition-duration: 0.3s;
+            }
+          }
+        }
+
+        @include m('content')  {
+          @include font-style($font-size-20, $font-weight-400, 32, $dark);
+          background-color: $thin-grey;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          padding: 20px;
+          margin-top: -15px;
+
+          @include res_for(sp) {
+            @include font-style($font-size-16, $font-weight-400, 20, $dark);
+          }
+        }
+      }
+    }
+  }
+}

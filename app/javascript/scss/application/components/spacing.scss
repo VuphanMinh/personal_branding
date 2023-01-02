@@ -1,0 +1,27 @@
+// ================== marign attribute ==================
+
+@for $i from 0 through 150 {
+  .mr-#{$i} {
+    margin-right: $i + px !important;
+  }
+
+  .ml-#{$i} {
+    margin-left: $i + px !important;
+  }
+
+  .mt-#{$i} {
+    margin-top: $i + px !important;
+  }
+
+  .mb-#{$i} {
+    margin-bottom: $i + px !important;
+  }
+
+  .pl-#{$i} {
+    padding-left: $i + px !important;
+  }
+
+  .pr-#{$i} {
+    padding-right: $i + px !important;
+  }
+}

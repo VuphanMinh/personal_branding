@@ -1,0 +1,25 @@
+.modal-custom {
+  width: 470px;
+  height: 481px;
+  padding: 30px;
+  background: $white;
+  border-radius: 20px;
+
+  @include e('logo') {
+    height: 40px;
+    margin-bottom: 20px;
+
+    img {
+      height: 40px;
+      object-fit: contain;
+    }
+  }
+
+  @include e('title') {
+    h2 { @include font-style($font-size-30, $font-weight-600, 41, $black); }
+
+    small {
+      @include font-style($font-size-16, $font-weight-400, 24, $light-black);
+    }
+  }
+}

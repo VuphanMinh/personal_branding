@@ -1,0 +1,227 @@
+#who-we-are-container {
+  position: relative;
+  @include retangle-heading(472px);
+
+  @include res_for(sp) {
+    @include retangle-heading(500px);
+  }
+}
+
+.who-we-are {
+  width: 100%;
+
+  @include e('heading') {
+    @include font-style($font-size-90, $font-weight-600, 88, $white);
+    text-align: center;
+    margin-top: 57px;
+
+    @include res_for(sp) {
+      @include font-style($font-size-30, $font-weight-600, 28, $white);
+    }
+  }
+
+  @include e('hint') {
+    @include font-style($font-size-20, $font-weight-400, 32, $white);
+    text-align: center;
+    padding: 0px 265px;
+    margin-bottom: 50px;
+
+    @include res_for(sp) {
+      @include font-style($font-size-16, $font-weight-400, 26, $white);
+      padding: 20px;
+    }
+  }
+
+  @include e('about') {
+    margin-bottom: 140px;
+
+    @include res_for(sp) {
+      margin-bottom: 0px;
+    }
+
+    .about {
+      @include e('title') {
+        @include font-style($font-size-56, $font-weight-600, 77, $dark);
+        text-align: center;
+        margin-top: 105px;
+        margin-bottom: 64px;
+
+        @include res_for(sp) {
+          @include font-style($font-size-34, $font-weight-600, 55, $dark);
+          margin-top: 50px;
+          margin-bottom: 34px;
+        }
+      }
+
+      @include e('content') {
+        @include flex-group-justify(center, center);
+
+        @include res_for(sp) {
+          flex-wrap: wrap;
+        }
+
+        @include m('item') {
+          width: 400px;
+          margin-right: 20px;
+
+          @include res_for(sp) {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 30px;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          @include e('img') {
+            display: flex;
+            justify-content: center;
+            height: 80px;
+            margin-bottom: 25px;
+
+            @include res_for(sp) {
+              height: 60px;
+              margin-bottom: 20px;
+            }
+
+            & > img {
+              width: 80px;
+              height: 80px;
+              object-fit: cover;
+
+              @include res_for(sp) {
+                width: 60px;
+                height: 60px;
+              }
+            }
+          }
+
+          @include e('title') {
+            @include font-style($font-size-34, $font-weight-600, 30, $dark);
+            text-align: center;
+            margin-bottom: 15px;
+
+            @include res_for(sp) {
+              @include font-style($font-size-20, $font-weight-600, 24, $dark);
+              margin-bottom: 10px;
+            }
+          }
+
+
+          @include e('description') {
+            @include font-style($font-size-20, $font-weight-400, 32, $deep-grey);
+            text-align: center;
+
+            @include res_for(sp) {
+              @include font-style($font-size-16, $font-weight-400, 20, $deep-grey);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include e('testimonials') {
+
+    @include m('title') {
+      @include font-style($font-size-56, $font-weight-600, 77, $dark);
+      margin-bottom: 74px;
+
+      @include res_for(sp) {
+        @include font-style($font-size-34, $font-weight-600, 34, $dark);
+        margin-bottom: 42px;
+      }
+    }
+
+    @include m('img') {
+      height: 660px;
+      border-radius: 30px;
+
+      @include res_for(sp) {
+        width: 100%;
+        height: 353px;
+        margin-bottom: 40px;
+      }
+
+      img {
+        width: 570px;
+        height: 660px;
+        border-radius: 30px;
+        object-fit: cover;
+        transform: rotate(5deg);
+
+        @include res_for(sp) {
+          width: 100%;
+          height: 353px;
+        }
+      }
+    }
+
+    .testimonials {
+      @include e('comment') {
+        display: block;
+        width: 470px;
+        height: 202px;
+        margin-bottom: 50px;
+
+        @include res_for(sp) {
+          width: 100%;
+          height: auto;
+          margin-bottom: 30px;
+        }
+
+        @include m('description') {
+          @include font-style($font-size-24, $font-weight-400, 36, $dark);
+          margin-bottom: 24px;
+
+          @include res_for(sp) {
+            @include font-style($font-size-20, $font-weight-400, 26, $dark);
+            margin-bottom: 20px;
+          }
+
+          &.description {
+            @include m('highlight') {
+              @include font-style($font-size-34, $font-weight-600, 44, $white);
+              margin-bottom: 18px;
+            }
+
+            @include m('cyan') {
+              span {
+                color: $dark-cyan;
+              }
+            }
+
+            @include m('pink') {
+              span {
+                color: $pink;
+              }
+            }
+
+            @include m('blue') {
+              span {
+                color: $blue;
+              }
+            }
+          }
+        }
+
+        @include m('info') {
+          @include flex-align(center);
+          & > img {
+            border-radius: 50%;
+            margin-right: 15px;
+          }
+
+          & > span {
+            &.highlight {
+              color: $white;
+            }
+
+            @include font-style($font-size-20, $font-weight-400, 20, $deep-grey);
+          }
+        }
+      }
+    }
+  }
+}

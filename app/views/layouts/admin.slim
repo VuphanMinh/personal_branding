@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    meta content=('text/html; charset=UTF-8') http-equiv='Content-Type'
+    meta content='width=device-width,initial-scale=1' name='viewport'
+    title personal_branding
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_pack_tag 'admin', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'admin', 'data-turbolinks-track': 'reload'
+  body.antialiased
+    .wrapper
+      / = render 'layouts/admin/aside' unless controller.controller_name == 'sessions'
+      .page-wrapper
+        .container-xl.mt-3
+          = yield

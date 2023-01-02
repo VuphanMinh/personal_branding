@@ -1,0 +1,103 @@
+.navbar-custom {
+  @include flex-align(center);
+  position: relative;
+
+  .nav-branch-custom {
+      width: 132px;
+      height: 50px;
+
+      img {
+        width: 132px;
+        height: 50px;
+        object-fit: contain;
+      }
+
+    @include res_for(sp) {
+      width: 105px;
+      height: 50px;
+
+      img {
+        height: 50px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  @include e('collapse') {
+    @include res_for(pc) {
+      @include flex-justify(center);
+    }
+
+    @include res_for(sp) {
+      width: 100%;
+      position: absolute;
+      top: 60px;
+      border-radius: 10px;
+      background-color: $thin-grey;
+      border: solid $deep-gray 1px;
+      z-index: 1;
+    }
+  }
+
+  .nav-group {
+    @include res_for(sp) {
+      display: none;
+    }
+  }
+
+  @include e('toggler') {
+    @include flex-group-justify(center, center);
+    width: 44px;
+    height: 44px;
+    background-color: $white;
+    border: solid $light-grey 1px;
+    border-radius: 10px;
+
+    img {
+      height: 25px;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0;
+    }
+  }
+
+  .navbar-nav-custom {
+    @include flex-group-decoration(row, center);
+    list-style: none;
+    margin-bottom: 0;
+
+    @include res_for(sp) {
+      flex-direction: column;
+    }
+
+    @include e('item') {
+      @include flex-group-decoration(column, flex-start);
+      width: 100%;
+      margin-right: 60px;
+
+      @include res_for(pc) {
+        &:last-child {
+          margin-right: 0px;
+        }
+      }
+
+      a {
+        @include font-style($font-size-16, $font-weight-600, 20, $dark);
+        text-transform: capitalize;
+        white-space: nowrap;
+        text-decoration: none;
+      }
+    }
+
+    @include m('white') {
+      a {
+        color: $white;
+
+        @include res_for(sp) {
+          color: $dark-cyan;
+        }
+      }
+    }
+  }
+}

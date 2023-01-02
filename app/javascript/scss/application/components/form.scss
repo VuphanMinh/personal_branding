@@ -1,0 +1,438 @@
+/*
+  Label custom
+*/
+.label-custom {
+  @include font-style($font-size-16, $font-weight-600, 20, $black);
+  display: flex;
+  margin-bottom: 10px;
+
+  @include m('required') {
+    &::after {
+      content: '*';
+      color: $red;
+    }
+  }
+
+  @include m('icon') {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  @include m('tooltip') {
+    content: '?';
+    width: 20px;
+    height: 20px;
+    background: $black;
+    border-radius: 50%;
+    text-align: center;
+    color: $white;
+    margin-left: 10px;
+  }
+
+}
+
+.form-custom {
+  height: 46px;
+  border-radius: 10px;
+  border: solid 1px $grey;
+  background-color: $gray;
+  @include font-style($font-size-16, $font-weight-400, 20, $black);
+
+  &.white {
+    background-color: $white;
+  }
+
+  @include e('textbox') {
+
+    &.is-invalid {
+      background-image: none;
+    }
+
+    &:focus {
+      border: solid 1px $dark-cyan;
+      background-color: $white;
+      box-shadow: none;
+    }
+
+    @include m('calendar') {
+      position: relative;
+      height:35px;
+
+      & > span {
+        @include flex-group-justify(center, center);
+        color: $dark-cyan;
+        width: 13px;
+        position: absolute;
+        top: 10px;
+        bottom: 0;
+        right: 20px;
+      }
+
+      &::after {
+        content: "";
+        display: none;
+      }
+    }
+
+    @include m('search') {
+      position: relative;
+      input { padding-left: 36px; }
+
+      & > .icon {
+        @include flex-group-justify(center, center);
+        background: url('~@/images/icons/search.svg') no-repeat center center;
+        background-size: contain;
+        width: 13px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 15px;
+      }
+
+      &::after {
+        content: "";
+        display: none;
+      }
+    }
+  }
+
+  @include e('selectbox') {
+    position: relative;
+
+    & > select {
+      height: 46px;
+      border-color: $dark-cyan;
+      padding-right: 20px;
+
+      &:focus {
+        border: solid 1px $dark-cyan;
+        background-color: $white;
+        box-shadow: none;
+      }
+    }
+
+    &::after {
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid $dark-cyan;
+      position: absolute;
+      top: 40%;
+      right: 10px;
+      content: "";
+      z-index: 98;
+    }
+
+    @include m('location') {
+      position: relative;
+      & > span {
+        width: 13px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 20px;
+        @include flex-group-justify(center, center);
+        color: $dark-cyan;
+      }
+
+      &::after {
+        content: "";
+        display: none;
+      }
+
+      select {
+        padding-left: 40px;
+      }
+    }
+  }
+
+  @include e('textarea') {
+    height: 160px;
+
+    &:focus {
+      border: solid 1px $dark-cyan;
+      background-color: $white;
+      box-shadow: none;
+    }
+  }
+
+  @include e('checkbox') {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+
+    input[type=checkbox] {
+      width: 26px;
+      height: 26px;
+      border-radius: 4px;
+      border: solid 1px $light-grey;
+      background-color: $white;
+      margin-right: 15px;
+
+      &:checked {
+        background-color: $dark-cyan;
+      }
+    }
+
+    .form-check {
+      @include flex-align(center);
+      @include font-style($font-size-18, $font-weight-600, 24, $black);
+      width: 50%;
+    }
+  }
+}
+
+/*
+  Radios button
+*/
+.radio-custom, .radio-custom-show {
+  display: flex;
+  position: relative;
+  margin-left: -1.5rem;
+
+  @include e('item') {
+    flex-direction: column;
+
+    .form-check {
+      width: 100%;
+      height: 50px;
+      border-radius: 10px;
+      border: solid 1px $grey;
+      background-color: $dark-gray;
+      padding: 14px;
+    }
+  }
+
+  [type="radio"] {
+    &:checked, &:not(:checked) {
+      position: absolute;
+      display: none;
+      opacity: 0;
+    }
+
+    &:checked + label, &:not(:checked) + label {
+      position: relative;
+      padding-left: 28px;
+      cursor: pointer;
+      line-height: 20px;
+      display: inline-block;
+      color: #666;
+    }
+
+    &:checked + label:before, &:not(:checked) + label:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      border: 1px solid $grey;
+      border-radius: 100%;
+      background: $white;
+    }
+
+    &:checked + label:after {
+      content: '';
+      width: 14px;
+      height: 14px;
+      background: $dark-cyan;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      border-radius: 100%;
+      transition: all 0.2s ease;
+    }
+
+    &:checked + label:after {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+.show-content {
+  @include e('description') {
+    display: block;
+
+    .description {
+      @include m('show') {
+        height: 90px;
+        overflow: auto;
+      }
+
+      @include m('hide') {
+        height: auto;
+      }
+    }
+  }
+}
+
+/*
+  Input range
+*/
+
+.form-range {
+  margin-top: 15px;
+
+  .range-custom {
+    position: relative;
+    height: 4px;
+    width: 100%;
+
+    @include e('slide') {
+      position: absolute;
+      top: 0;
+      height: 4px;
+      border-radius: 2px;
+      background: $grey;
+      left: 5px;
+      right: 5px;
+
+      .line {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 4px;
+        background-color: $dark-cyan;
+      }
+
+      .thumb {
+        position: absolute;
+        z-index: 2;
+        text-align: left;
+        outline: none;
+        top: -26px;
+        margin-left: -9px;
+
+        @include e('value') {
+          @include font-style($font-size-13, $font-weight-400, 18, $dark-cyan);
+          white-space: nowrap;
+        }
+
+        @include e('button') {
+          height: 18px;
+          width: 18px;
+          background-color: $dark-cyan;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    input {
+      -webkit-appearance: none;
+      appearance: none;
+      position: absolute;
+      pointer-events: none;
+      z-index: 3;
+      height: 3px;
+      top: 0;
+      width: 100%;
+      opacity: 0;
+      margin: 0;
+    }
+
+    input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      pointer-events: all;
+      border-radius: 50%;
+      cursor: pointer;
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+/*
+  Select2 custom form
+*/
+
+.select2-custom-tags {
+  position: relative;
+
+  .select2-container .select2-selection--multiple .select2-selection__rendered {
+    display: flex;
+    flex-shrink: 1;
+    position: absolute;
+    top: 45px;
+  }
+
+  .select2-container--default .select2-selection--multiple .select2-selection__choice {
+    @include flex-align(center);
+    height: 36px;
+    border-radius: 10px;
+    background-color: $light-blue;
+    opacity: 1;
+    text-align: center;
+    padding: 9px 15px;
+    border: none;
+
+    span {
+      color: $dark-cyan;
+    }
+
+  .select2-selection__choice__remove {
+      position: absolute;
+      top: -3px;
+      right: 0;
+      left: inherit;
+      border-right: none;
+      font-size: 20px;
+      font-weight: 400;
+    }
+  }
+}
+
+/* Make Select2 boxes match Bootstrap3 as well as Bootstrap4 heights: */
+.select2-selection__rendered {
+  line-height: 42px !important;
+}
+
+.select2-selection {
+  height: 46px !important;
+  background: $gray !important;
+  border-radius: 10px !important;
+  border: solid 1px $grey !important;
+}
+
+/*
+  Input file
+*/
+
+.input-custom-file {
+  width: 130px;
+	color: transparent;
+
+	&::-webkit-file-upload-button {
+		visibility: hidden;
+	}
+
+	&::before {
+		content: 'Select some files';
+    @include font-style($font-size-14, $font-weight-400, 19, $black);
+		display: inline-block;
+		background: $gray;
+		border: 1px solid $grey;
+		border-radius: 5px;
+		padding: 8px;
+		outline: none;
+		white-space: nowrap;
+		cursor: pointer;
+	}
+	&:hover {
+		&::before {
+			border-color: $black;
+		}
+	}
+	&:active {
+		outline: 0;
+	}
+}

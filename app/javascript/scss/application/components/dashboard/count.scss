@@ -1,0 +1,16 @@
+.count {
+  @include flex-justify(space-between);
+  @include font-style($font-size-18, $font-weight-600, 24, $black);
+  margin: 20px 0;
+
+  @include e('sort') {
+    @include flex-align(center);
+
+    .icon {
+      background: url('~@/images/icons/caret-down.svg') no-repeat center center;
+      background-size: contain;
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
