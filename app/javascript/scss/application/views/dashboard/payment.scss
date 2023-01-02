@@ -1,0 +1,183 @@
+.payment {
+  margin-top: 30px;
+  height: auto;
+
+  h1 {
+    @include font-style($font-size-30, $font-weight-600, 41, $black);
+  }
+
+  @include e('head') {
+    @include flex-group-justify(space-between, center);
+    width: 100%;
+
+    h1 {
+      @include font-style($font-size-34, $font-weight-600, 41, $black);
+      margin-bottom: 20px;
+    }
+  }
+
+  @include e('description') {
+    @include font-style($font-size-16, $font-weight-400, 24, $light-black);
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  @include e('smart-agency') {
+    .agency {
+      width: 100%;
+      padding: 30px;
+      border-radius: 20px;
+      background-color: $white;
+      border: solid 1px $light-grey;
+
+      &.grey {
+        background-color: $light-grey;
+      }
+
+      @include e('group-title') {
+        @include m('step') {
+          @include font-style($font-size-16, $font-weight-600, 22, $dark);
+        }
+
+        @include m('subtitle') {
+          @include font-style($font-size-20, $font-weight-600, 27, $dark-cyan);
+          margin-bottom: 10px;
+        }
+      }
+
+      @include e('purchased') {
+        label {
+          @include font-style($font-size-16, $font-weight-400, 24, $red);
+          margin-left: 15px;
+
+          span {
+            font-weight: $font-weight-600;
+          }
+        }
+      }
+
+      hr {
+        height: 1px;
+        background-color: $grey;
+        border: 1px solid $grey;
+        margin: 20px auto;
+
+        @include res_for(sp) {
+          margin: 15px auto;
+        }
+      }
+
+      @include e('price') {
+        .price {
+          @include font-style($font-size-20, $font-weight-600, 27, $dark-cyan);
+          background: $dark-cyan-hex-1;
+          width: 70px;
+          border-radius: 10px;
+          padding: 10px;
+
+          &.pack {
+            width: 114px;
+          }
+
+          @include m('pack') {
+            @include font-style($font-size-14, $font-weight-400, 18, $dark-cyan);
+            white-space: nowrap;
+          }
+        }
+      }
+
+      @include e('content') {
+        @include m('item') {
+          @include flex-group-justify(space-between, center);
+          width: 100%;
+          margin-bottom: 12px;
+
+          @include res_for(sp) {
+            margin-bottom: 10px;
+          }
+
+          .item {
+            @include e('title') {
+              @include font-style($font-size-16, $font-weight-400, 24, $black);
+              width: 95%;
+
+              span {
+                font-weight: $font-weight-600;
+              }
+
+              .cyan {
+                color: $dark-cyan;
+              }
+            }
+
+            @include e('checked') {
+              background: url('~@/images/icons/checked.svg') no-repeat center center;
+              background-size: contain;
+              width: 20px;
+              height: 20px;
+            }
+
+            @include e('service') {
+              @include font-style($font-size-16, $font-weight-400, 24, $dark);
+              width: 100%;
+
+              .radio-custom {
+                margin-left: 0;
+              }
+
+              @include m('choosed') {
+                width: 100%;
+                border-radius: 10px;
+                background-color: $dark-cyan-hex-1;
+                border: solid 2px $dark-cyan;
+                color: $dark-cyan;
+                padding: 14px 0 14px 25px;
+              }
+            }
+          }
+        }
+      }
+
+      @include e('action') {
+        width: 100%;
+      }
+    }
+  }
+
+  @include e('table') {
+    .table-custom {
+      border-collapse: collapse;
+      border-radius: 20px;
+      border: solid 1px $light-grey;
+      background: $white;
+      overflow: hidden;
+
+      & > :not(:first-child) {
+        border-top: none;
+      }
+
+      th, td {
+        @include font-style($font-size-16, $font-weight-600, 24, $black);
+        padding: 15px 20px;
+      }
+
+      thead {
+        th {
+          @include font-style($font-size-16, $font-weight-400, 24, $light-black);
+        }
+      }
+
+      tbody {
+        td {
+          &:nth-child(3) {
+            color: $dark-cyan;
+          }
+
+          &:nth-child(4) {
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+}

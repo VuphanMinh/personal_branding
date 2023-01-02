@@ -1,0 +1,546 @@
+#introduction-container {
+  margin-top: 65px;
+
+  @include res_for(sp) {
+    margin-top: 20px;
+  }
+
+  .introduction {
+    position: relative;
+    height: 580px;
+    margin-bottom: 60px;
+
+    @include res_for(sp) {
+      height: 480px;
+    }
+
+    @include e('banner') {
+      width: 100%;
+      height: 580px;
+      position: absolute;
+      z-index: 0;
+      border: solid 1px $thin-grey;
+      border-radius: 30px;
+
+      @include res_for(sp) {
+        height: 420px;
+      }
+
+      img {
+        width: 100%;
+        height: 580px;
+        border-radius: 30px;
+        object-fit: cover;
+
+        @include res_for(sp) {
+          height: 420px;
+        }
+      }
+    }
+
+    @include e('heading') {
+      width: 54%;
+      position: absolute;
+      top: 190px;
+      left: 65px;
+      z-index: 1;
+
+      @include res_for(sp) {
+        width: 90%;
+        top: 130px;
+        left: 20px;
+      }
+
+      h1 {
+        @include font-style($font-size-54, $font-weight-700, 72, $white);
+        margin-bottom: 16px;
+
+        @include res_for(sp) {
+          @include font-style($font-size-26, $font-weight-700, 38, $white);
+          margin-bottom: 12px;
+        }
+      }
+
+      p {
+        @include font-style($font-size-24, $font-weight-400, 36, $white);
+
+        @include res_for(sp) {
+          @include font-style($font-size-16, $font-weight-400, 24, $white);
+        }
+      }
+
+      @include m('application') {
+        @include flex-group-justify(flex-start, center);
+
+        img {
+          width: 196px;
+          height: 64px;
+
+          &:first-child {
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// media-logo
+#media-container {
+  margin-top: 120px;
+  .media {
+    @include e('title') {
+      @include font-style($font-size-24, $font-weight-400, 24, $deep-grey);
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    @include e('group') {
+      @include flex-group-justify(center, center);
+
+      @include m('img') {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 100%;
+
+        a {
+          @include flex-group-justify(center, center);
+          width: 17%;
+
+          & > img {
+            width: auto;
+            height: 30px;
+          }
+        }
+      }
+    }
+
+    @include e('advertisement') {
+      @include flex-group-justify(center, center);
+      @include font-style($font-size-40, $font-weight-700, 40, $dark-cyan);
+
+      span {
+        @include font-style($font-size-90, $font-weight-700, 90, $pink);
+      }
+    }
+  }
+}
+
+#overview-container {
+  .overview {
+    width: 93%;
+    border-radius: 30px;
+    background-color: $thin-grey;
+    padding: 150px 30px 65px;
+    margin: auto;
+
+    @include res_for(sp) {
+      padding: 24px 20px;
+    }
+
+    @include e('content') {
+      margin-bottom: 150px;
+
+      @include res_for(sp) {
+        margin-bottom: 37px;
+      }
+
+      @include m('title') {
+        @include font-style($font-size-56, $font-weight-700, 62, $dark);
+        margin-bottom: 20px;
+
+        @include res_for(sp) {
+          @include font-style($font-size-24, $font-weight-700, 28, $dark);
+          margin-bottom: 5px;
+        }
+      }
+
+      @include m('desciption') {
+        @include font-style($font-size-20, $font-weight-400, 32, $deep-grey);
+        margin-bottom: 20px;
+
+        @include res_for(sp) {
+          @include font-style($font-size-16, $font-weight-400, 24, $deep-grey);
+        }
+      }
+    }
+
+    @include e('img') {
+      position: relative;
+      width: 100%;
+      height: 410px;
+      margin-bottom: 150px;
+
+      @include res_for(sp) {
+        margin-bottom: 37px;
+      }
+
+      @include res_for(sp) {
+        height: 270px;
+      }
+
+      @include m('left') {
+        @include flex-justify(flex-start);
+      }
+
+      @include m('center') {
+        @include flex-justify(center);
+      }
+
+      @include m('right') {
+        @include flex-justify(flex-end);
+      }
+
+      @include m('hexagon') {
+        background: url('~@/images/icons/hexagon.svg') no-repeat center center;
+        position: absolute;
+        width: 350px;
+        height: 340px;
+        padding: 16px 34px 18px 35px;
+        transform: rotate(45deg);
+        z-index: 1;
+
+        @include res_for(sp) {
+          background: url('~@/images/icons/hexagon-mobile.svg') no-repeat center center;
+          width: 288px;
+          height: 278px;
+        }
+      }
+
+      @include m('screen') {
+        position: absolute;
+        top: 10px;
+        z-index: 2;
+
+        @include res_for(sp) {
+          top: 0;
+        }
+
+        .screen {
+          @include m('profile') {
+            @include screen(331px, 314px);
+
+            @include res_for(sp) {
+              @include screen(250px, 277px);
+            }
+          }
+        }
+      }
+
+      @include m('other') {
+        position: relative;
+        width: 500px;
+        height: 410px;
+        border-radius: 40px;
+        border: solid 1px $thin-grey;
+        overflow: hidden;
+
+        @include res_for(sp) {
+          width: 100%;
+          height: 250px;
+          border-radius: 20px;
+        }
+
+        & > img {
+          width: 500px;
+          height: 410px;
+          border-radius: 40px;
+          object-fit: cover;
+          object-position: left;
+
+          @include res_for(sp) {
+            width: 100%;
+            height: 250px;
+            border-radius: 20px;
+          }
+        }
+
+        & > .other-limited {
+          position: absolute;
+          width: 100%;
+          height: 10px;
+          top: 50%;
+          left: 50%;
+          background-color: $white;
+          transform: translate(-50%, 0%);
+        }
+      }
+    }
+  }
+}
+
+// // procedure
+#procedure-container {
+  @include res_for(sp) {
+    padding: 0 20px;
+  }
+
+  .procedure {
+    background: url('~@/images/landing/bg-procedure.png') no-repeat top right;
+    background-color: $light-dark;
+    width: 93%;
+    border-radius: 30px;
+    padding: 65px 30px;
+    margin: auto;
+    margin-bottom: 150px;
+
+    @include res_for(sp) {
+      background: url('~@/images/landing/bg-procedure-mobile.png') no-repeat center center;
+      background-color: $light-dark;
+      background-position: bottom right;
+      background-size: cover;
+      width: 100%;
+      padding: 38px 20px;
+      margin-bottom: 30px;
+    }
+
+    @include e('title') {
+      @include font-style(84px, $font-weight-700, 84, $white);
+      margin-bottom: 100px;
+
+      @include res_for(sp) {
+        @include font-style(30px, $font-weight-700, 38, $white);
+        margin-bottom: 20px;
+      }
+    }
+
+    @include e('content') {
+      @include flex-group-justify(space-between, top);
+      flex-wrap: nowrap;
+
+      @include res_for(sp) {
+        flex-wrap: wrap;
+      }
+
+      .content {
+        @include e('list') {
+          width: 370px;
+          margin-bottom: 60px;
+
+          @include res_for(sp) {
+            width: 100%;
+            margin-bottom: 30px;
+          }
+
+          @include m('img') {
+            @include flex-justify(center);
+            height: 80px;
+            margin-bottom: 5px;
+
+            @include res_for(sp) {
+              height: 60px
+            }
+
+            img {
+              height: 80px;
+
+              @include res_for(sp) {
+                height: 60px
+              }
+            }
+          }
+
+          @include m('description') {
+            text-align: center;
+
+            @include res_for(sp) {
+              width: 100%;
+              margin: auto;
+            }
+
+            h4 {
+              @include font-style($font-size-26, $font-weight-700, 26, $white);
+              margin-bottom: 16px;
+
+              @include res_for(sp) {
+                @include font-style($font-size-20, $font-weight-700, 27, $white);
+                margin-bottom: 11px;
+              }
+            }
+
+            p {
+              @include font-style($font-size-18, $font-weight-400, 26, $deep-gray);
+
+              @include res_for(sp) {
+                @include font-style($font-size-16, $font-weight-400, 24, $deep-gray);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#testimonials-container {
+  .testimonials {
+    margin: 0px 135px;
+
+    @include res_for(sp) {
+      margin: auto;
+    }
+
+    @include e('comment') {
+      display: block;
+      height: 202px;
+      margin-bottom: 50px;
+
+      @include res_for(sp) {
+        height: auto;
+        margin-bottom: 32px;
+      }
+
+      &.comment {
+        @include e('highlight') {
+          background: url('~@/images/landing/bg-testimonials.svg') no-repeat center center;
+          width: 100%;
+          height: 708px;
+          border-radius: 30px;
+          padding: 60px;
+          margin-right: 130px;
+
+          @include res_for(sp) {
+            height: 524px;
+            padding: 20px;
+            margin-bottom: 32px;
+          }
+        }
+      }
+      @include m('description') {
+        @include font-style($font-size-24, $font-weight-400, 36, $dark);
+        margin-bottom: 24px;
+
+        @include res_for(sp) {
+          @include font-style($font-size-20, $font-weight-400, 30, $dark);
+          margin-bottom: 20px;
+        }
+
+        &.description {
+          @include m('highlight') {
+            @include font-style($font-size-34, $font-weight-700, 44, $white);
+            margin-bottom: 18px;
+
+            @include res_for(sp) {
+              @include font-style($font-size-20, $font-weight-700, 30, $white);
+            }
+          }
+
+          @include m('cyan') {
+            span {
+              color: $dark-cyan;
+            }
+          }
+
+          @include m('pink') {
+            span {
+              color: $pink;
+            }
+          }
+
+          @include m('blue') {
+            span {
+              color: $blue;
+            }
+          }
+        }
+      }
+
+      @include m('info') {
+        @include flex-align(center);
+        & > img {
+          border-radius: 50%;
+          margin-right: 15px;
+        }
+
+        & > span {
+          &.highlight {
+            color: $white;
+          }
+
+          @include font-style($font-size-20, $font-weight-400, 20, $deep-grey);
+
+          @include res_for(sp) {
+            @include font-style($font-size-16, $font-weight-400, 22, $deep-grey);
+          }
+        }
+      }
+    }
+  }
+}
+
+#performance-container {
+  .performance {
+    background-color: $deep-pink;
+    padding-top: 150px;
+
+    @include res_for(sp) {
+      padding-top: 65px;
+    }
+
+    @include e('title') {
+      @include font-style($font-size-56, $font-weight-700, 62, $white);
+      text-align: center;
+      padding: 0 180px;
+      margin-bottom: 15px;
+
+      @include res_for(sp) {
+        @include font-style($font-size-30, $font-weight-700, 38, $white);
+        padding: 0;
+      }
+    }
+
+    @include e('description') {
+      @include font-style($font-size-20, $font-weight-400, 32, $white);
+      text-align: center;
+      padding: 0 300px;
+      margin-bottom: 45px;
+
+      @include res_for(sp) {
+        @include font-style($font-size-16, $font-weight-400, 24, $white);
+        text-align: center;
+        padding: 0;
+      }
+    }
+
+    @include e('screens') {
+      @include flex-justify(center);
+      width: 100%;
+      padding-bottom: 150px;
+
+      @include res_for(sp) {
+        flex-wrap: wrap;
+        padding-bottom: 60px;
+      }
+
+      @include m('view') {
+        width: 400px;
+        height: 410px;
+        border-radius: 20px;
+        margin-right: 20px;
+
+        @include res_for(sp) {
+          width: 100%;
+          height: auto;
+          margin-right: 0;
+          margin-bottom: 30px;
+        }
+
+        &:last-child {
+          margin-right: 0px;
+        }
+
+        & > img {
+          width: 400px;
+          height: 410px;
+          border-radius: 20px;
+          object-fit: cover;
+
+          @include res_for(sp) {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+.helpers {
+  margin-top: 30px;
+
+  h1 {
+    @include font-style($font-size-30, $font-weight-600, 41, $black);
+    margin-bottom: 20px;
+  }
+
+  .helpers-filter {
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    border: solid 1px $light-grey;
+    background-color: $white;
+  }
+
+  @include e('back') {
+    @include flex-align(center);
+    margin-bottom: 20px;
+
+    a {
+      width: 34px;
+      height: 34px;
+      margin-right: 15px;
+
+      img {
+        width: 34px;
+        height: 34px;
+      }
+    }
+
+    @include m('title') {
+      @include font-style($font-size-16, $font-weight-600, 24, $black);
+    }
+  }
+
+  @include e('detail') {
+    width: 100%;
+    background: $white;
+    border-radius: 20px;
+    border: solid 1px $light-grey;
+    padding: 20px;
+    margin-top: 20px;
+
+    label {
+      @include font-style($font-size-18, $font-weight-600, 24, $black);
+      margin-bottom: 15px;
+    }
+
+    @include m('about') {
+      p { @include font-style($font-size-18, $font-weight-400, 28, $black); }
+    }
+
+    hr {
+      width: 100%;
+      height: 3px;
+      background-color: $light-grey;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+
+  }
+}

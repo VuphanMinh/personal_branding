@@ -1,0 +1,71 @@
+.wrap-authentication {
+  width: 100%;
+  height: calc(100vh);
+  position: relative;
+  display: table;
+  table-layout: fixed;
+  background-color: $light-grey;
+
+  .authentication {
+    width: 570px;
+    background-color: $white;
+    display: table;
+    vertical-align: middle;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 0 $light-grey;
+    padding: 60px 50px 64px;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 46px;
+
+    @include e('logo') {
+      @include font-style(44px, $font-weight-700, 60, $dark-cyan);
+      font-family: 'Nunito', sans-serif;
+      text-align: center;
+      text-transform: uppercase;
+      width: 100%;
+    }
+
+    @include e('limited') {
+      @include flex-group-justify(space-between, center);
+      @include font-style($font-size-14, $font-weight-400, 16, $deep-grey);
+
+      span {
+        width: 210px;
+        height: 1px;
+        background-color: $grey;
+      }
+    }
+
+    @include e('forget-password') {
+      @include flex-justify(flex-end);
+      @include font-style($font-size-14, $font-weight-600, 14, $dark-cyan);
+    }
+
+    @include e('policy') {
+      @include flex-justify(center);
+      @include font-style($font-size-14, $font-weight-600, 14, $black);
+
+      a {
+        color: $blue;
+      }
+    }
+
+    @include e('sign-up') {
+      widht: 100%;
+      @include flex-justify(center);
+
+      @include m('invisible') {
+        @extend .btn-custom__authentication;
+        @include font-style($font-size-16, $font-weight-600, 16, $dark-cyan);
+        text-decoration: none;
+
+        &:hover {
+          background-color: rgba(8, 151, 157, 0.1);
+          transition: all 0.5s ease;
+          color: $dark-cyan;
+        }
+      }
+    }
+  }
+}

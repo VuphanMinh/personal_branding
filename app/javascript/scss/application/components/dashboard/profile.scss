@@ -1,0 +1,144 @@
+.profile {
+  width: 100%;
+  height: auto;
+  padding: 40px 0 15px;
+  border-radius: 20px;
+  border: solid 1px $light-grey;
+  background-color: $white;
+
+  &.border-none {
+    border: none;
+  }
+
+  @include e('info') {
+    border-bottom: $light-grey solid 1px;
+    .info {
+      @include e('avatar') {
+        width: 120px;
+        height: 120px;
+        border-radius: 20px;
+        margin: auto;
+
+        img {
+          width: 120px;
+          height: 120px;
+          border-radius: 20px;
+          object-fit: cover;
+        }
+      }
+
+      @include e('name') {
+        @include flex-group-justify(center, center);
+        @include font-style($font-size-18, $font-weight-600, 24, $black);
+
+        .name {
+          @include m('checked') {
+            background: url('~@/images/icons/checked-blue.png') no-repeat center center;
+            background-size: contain;
+            width: 14px;
+            height: 14px;
+            margin-left: 6px;
+          }
+        }
+      }
+
+      @include e('fullname') {
+        @include flex-group-justify(center, center);
+        @include font-style($font-size-14, $font-weight-400, 19, $black);
+        margin-bottom: 10px;
+      }
+
+      @include e('state') {
+        @include flex-group-justify(center, center);
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  @include e('basic') {
+    padding: 20px;
+
+    @include m('title') {
+      @include font-style($font-size-18, $font-weight-600, 24, $black);
+    }
+
+    @include m('content') {
+      .content {
+        @include e('item') {
+          @include flex-group-justify(space-between, center);
+          border-bottom: 1px solid $light-grey;
+          padding: 15px 0;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          @include m('title') {
+            @include font-style($font-size-16, $font-weight-400, 22, $black);
+            display: flex;
+
+            .icon {
+              height: 15px;
+              margin-right: 20px;
+
+              img {
+                height: 15px;
+              }
+            }
+          }
+
+          @include m('value') {
+            @include font-style($font-size-16, $font-weight-600, 22, $black);
+            display: flex;
+
+            &.children {
+              @include font-style($font-size-14, $font-weight-400, 22, $black);
+              flex-direction: column;
+
+              span {
+                @include font-style($font-size-16, $font-weight-600, 22, $black);
+                text-align: right;
+              }
+            }
+
+            &.multiple-value {
+              width: 220px;
+              text-align: right;
+            }
+
+            .icon {
+              width: 15px;
+              height: 15px;
+              margin-right: 20px;
+
+              img {
+                width: 15px;
+                height: 15px;
+              }
+            }
+
+            &.blue {
+              color: $blue;
+            }
+
+            &.history {
+              display: flex;
+              flex-direction: column;
+              text-align: end;
+
+              label {
+                @include font-style($font-size-16, $font-weight-600, 24, $black);
+                margin-bottom: 0;
+              }
+
+              p {
+                @include font-style($font-size-16, $font-weight-400, 24, $black);
+                width: 320px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

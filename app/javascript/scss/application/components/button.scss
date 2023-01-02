@@ -1,0 +1,310 @@
+.btn-custom {
+  // Login and Sigup button
+  @include e('authentication') {
+    @include flex-group-justify(center, center);
+    @include font-style($font-size-16, $font-weight-400, 20, inherit);
+    width: 470px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    padding-left: 14px;
+    padding-right: 14px;
+
+    img {
+      width: 18px;
+      height: 18px;
+      margin-right: 15px;
+    }
+
+    @include m('facebook') {
+      color: $white;
+      background-color: $blue;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+
+    @include m('google') {
+      border: 1px solid $grey;
+      color: $black;
+      text-decoration: none;
+      background-color: $white;
+      box-shadow: 4px 4px 10px 0 $dark-cyan-hex-5;
+
+      &:hover {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+
+    @include m('helper') {
+      color: $white;
+      background-color: $dark-cyan;
+
+      &:hover {
+        color: inherit;
+      }
+    }
+  }
+
+  // Navbar button
+  @include e('navbar') {
+    @include font-style($font-size-16, $font-weight-400, 20, inherit);
+    height: 44px;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 11px 10px;
+
+    & > .plus {
+      display: inline-block;
+      background: url('~@/images/icons/plus.svg') no-repeat center center;
+      background-size: contain;
+      width: 14px;
+      height: 14px;
+      margin-right: 10px;
+    }
+
+    @include m('cyan') {
+      background-color: $dark-cyan;
+      color: $white;
+
+      &:hover {
+        color: $white;
+      }
+    }
+
+    @include m('white') {
+      background-color: $white;
+      color: $black;
+      box-shadow: 0 2px 4px 0 rgba(225, 225, 225, 0.5);
+      border: solid 1px $light-grey;
+
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+
+  @include e('normal') {
+    @include flex-group-justify(center, center);
+    @include font-style($font-size-16, $font-weight-400, 20, $white);
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: $dark-cyan-hex-1;
+
+    @include m('branch') {
+      @include font-style($font-size-14, $font-weight-600, 20, $white);
+      text-align: center;
+      height: 24px;
+      padding: 5px 7px;
+      border-radius: 5px;
+      margin-right: 15px;
+
+      &.cyan {
+        background-color: $cyan;
+      }
+
+      &.rose {
+        background-color: $deep-rose;
+      }
+    }
+
+    &:hover {
+      color: $white;
+    }
+
+    @include m('focus') {
+      background: $dark-cyan;
+    }
+
+    @include m('rose') {
+      background: $rose;
+    }
+
+    @include m('decline') {
+      background: $red;
+      color: $white;
+    }
+
+    @include m('accept') {
+      background: $green-hex-1;
+      color: $green;
+
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+
+  @include e('primary') {
+    @include flex-group-justify(center, center);
+    @include font-style($font-size-16, $font-weight-400, 16, $white);
+    background-color: $dark-cyan;
+    border-radius: 12px;
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 0.375rem 0.75rem;
+
+    &:hover {
+      color: $white;
+    }
+
+    @include m('started') {
+      @include font-style($font-size-20, $font-weight-400, 20, $white);
+      text-transform: uppercase;
+      height: 64px;
+      padding: 20px 36px;
+
+      @include res_for(sp) {
+        @include font-style($font-size-16, $font-weight-400, 22, $white);
+        text-align: center;
+        width: 160px;
+        height: 50px;
+        padding: 14px 0;
+      }
+    }
+
+    @include m('invite') {
+      @include flex-align(center);
+      @include font-style($font-size-16, $font-weight-400, 22, $white);
+      height: 40px;
+
+      .icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+
+        img {
+          width: 20px;
+          height: 20px;
+          object-fit: contain;
+        }
+      }
+    }
+
+    @include m('action') {
+      @include font-style($font-size-16, $font-weight-400, 22, $white);
+      text-align: center;
+      width: 127px;
+      height: 44px;
+
+      &.discard {
+        @extend .btn-custom__navbar--white;
+      }
+    }
+  }
+
+  @include e('clear-photo') {
+    @include font-style($font-size-14, $font-weight-400, 19, $black);
+		display: inline-block;
+		background: $gray;
+		border: 1px solid $grey;
+		border-radius: 5px;
+		padding: 8px;
+		outline: none;
+		white-space: nowrap;
+		cursor: pointer;
+  }
+}
+
+.link-to {
+  @include font-style($font-size-14, $font-weight-600, 19, $dark-cyan);
+  @include flex-align(center);
+  text-decoration: none;
+
+  img {
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+  }
+
+  &.add-more {
+    color: $dark-cyan;
+  }
+
+  &.remove {
+    color: $pink;
+  }
+
+  @include e('see-more') {
+    @include font-style($font-size-16, $font-weight-600, 22, $dark-cyan);
+    text-align: center;
+    text-decoration: none;
+    margin: 15px auto;
+
+    &:hover {
+      color: $dark-cyan;
+    }
+  }
+}
+
+.state {
+  @include font-style($font-size-18, $font-weight-600, 19, inherit);
+
+  @include m('info') {
+    font-weight: $font-weight-700;
+    text-transform: capitalize;
+    background: $blue-hex-1;
+    color: $blue;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+
+  @include m('warning') {
+    font-weight: $font-weight-700;
+    text-transform: capitalize;
+    background: $orange-hex-1;
+    color: $orange;
+
+    &:hover {
+      color: $orange;
+    }
+  }
+
+  @include m('danger') {
+    font-weight: $font-weight-700;
+    text-transform: capitalize;
+    background: $red-hex-1;
+    color: $red;
+
+    &:hover {
+      color: $red;
+    }
+  }
+
+  @include m('success') {
+    font-weight: $font-weight-700;
+    text-transform: capitalize;
+    background: $green-hex-1;
+    color: $green;
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  @include m('secondary') {
+    font-weight: $font-weight-700;
+    text-transform: capitalize;
+    background: $light-gray;
+    color: $black;
+
+    &:hover {
+      color: $black;
+    }
+  }
+}
+
+.disable {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.6;
+}

@@ -1,0 +1,23 @@
+.tabs-custom {
+  @include e('list') {
+    display: flex;
+    flex-wrap: nowrap;
+
+    li {
+      .nav-link-custom {
+        @include font-style($font-size-16, $font-weight-400, 22, $black);
+        width: 100%;
+        text-align: center;
+        white-space: nowrap;
+        background: $strong-white;
+        border: none;
+
+        &.active {
+          color: $dark-cyan;
+          border-bottom: solid $dark-cyan 2px;
+          background: $strong-white;
+        }
+      }
+    }
+  }
+}

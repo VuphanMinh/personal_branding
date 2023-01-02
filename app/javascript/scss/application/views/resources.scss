@@ -1,0 +1,192 @@
+#resources-container {
+  position: relative;
+  @include retangle-heading(526px);
+
+  @include res_for(sp) {
+    @include retangle-heading(560px);
+  }
+}
+
+.resources {
+  width: 100%;
+
+  @include e('heading') {
+    @include font-style($font-size-90, $font-weight-600, 88, $white);
+    text-align: center;
+    margin-top: 57px;
+
+    @include res_for(sp) {
+      @include font-style($font-size-30, $font-weight-600, 28, $white);
+    }
+  }
+
+  @include e('hint') {
+    @include font-style($font-size-20, $font-weight-400, 32, $white);
+    text-align: center;
+    padding: 0px 265px;
+    margin-bottom: 50px;
+
+    @include res_for(sp) {
+      @include font-style($font-size-16, $font-weight-400, 28, $white);
+      padding: 0px 20px;
+      margin-bottom: 0px;
+    }
+  }
+
+  @include e('arrow-icon') {
+    height: 25px;
+
+    @include res_for(sp) {
+      height: 14px;
+    }
+  }
+
+  @include e('card') {
+    width: 100%;
+    height: 490px;
+    border-radius: 30px;
+    box-shadow: 10px 10px 20px 0 #f1f1f1;
+    background-color: $white;
+    overflow: hidden;
+    margin-bottom: 30px;
+
+    @include res_for(sp) {
+      height: 465px;
+      border-radius: 15px;
+    }
+
+    a { text-decoration: none;}
+
+    @include m('img') {
+      width: 100%;
+      height: 250px;
+
+      img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+
+      @include res_for(sp) {
+        height: 226px;
+
+        img {
+          height: 226px;
+        }
+      }
+    }
+
+    @include m('body') {
+      padding: 20px;
+
+      small {
+        @include font-style($font-size-16, $font-weight-400, 24, $deep-grey);
+        margin-bottom: 16px;
+      }
+
+      h4 {
+        @include font-style($font-size-20, $font-weight-600, 30, $black);
+        margin-bottom: 13px;
+      }
+
+      & > .description, p {
+        @include font-style($font-size-16, $font-weight-400, 24, $deep-grey);
+        height: 94px;
+        overflow-y: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+      }
+    }
+  }
+}
+
+.resources-detail {
+  width: 100%;
+  margin-bottom: 150px;
+
+  @include res_for(sp) {
+    margin-bottom: 60px;
+  }
+
+  @include e('heading') {
+    @include font-style($font-size-90, $font-weight-600, 88, $dark);
+    text-align: center;
+    margin-top: 60px;
+
+    @include res_for(sp) {
+      @include font-style($font-size-34, $font-weight-600, 32, $dark);
+    }
+  }
+
+  @include e('description') {
+    @include font-style($font-size-24, $font-weight-600, 36, $deep-grey);
+    text-align: center;
+    margin-bottom: 34px;
+
+    @include res_for(sp) {
+      @include font-style($font-size-20, $font-weight-600, 18, $deep-grey);
+      margin-bottom: 20px;
+    }
+  }
+
+  @include e('created') {
+    @include font-style($font-size-16, $font-weight-600, 22, $deep-grey);
+    text-align: center;
+    margin-bottom: 87px;
+
+    @include res_for(sp) {
+      @include font-style($font-size-14, $font-weight-600, 14, $deep-grey);
+      margin-bottom: 20px;
+    }
+  }
+
+  @include e('img') {
+    width: 970px;
+    height: 546px;
+    border-radius: 30px;
+    margin: auto;
+
+    @include res_for(sp) {
+      width: 100%;
+      height: 200px;
+      border-radius: 10px;
+    }
+
+    img {
+      width: 970px;
+      height: 546px;
+      border-radius: 30px;
+      object-fit: cover;
+
+      @include res_for(sp) {
+        width: 100%;
+        height: 200px;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  @include e('features-title') {
+    @include font-style($font-size-56, $font-weight-600, 77, $dark);
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: 148px;
+
+    @include res_for(sp) {
+      @include font-style($font-size-30, $font-weight-600, 28, $dark);
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  }
+
+  @include e('content') {
+    margin-left: calc(100% - 80% + 50px);
+    margin-right: calc(100% - 80% + 50px);
+
+    @include res_for(sp) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
