@@ -17,8 +17,14 @@ Things you may want to cover:
 
 * How to run the test suite
 
+* How to run rails server
+run Dev server: rails s -b 0.0.0.0
+run Webpacker: bin/webpack-dev-server
+
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
 
 * ...
+
+
