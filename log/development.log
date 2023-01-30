@@ -34,3 +34,128 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 32ms (Views: 13.5ms | ActiveRecord: 0.0ms | Allocations: 3101)
 
 
+Started GET "/" for ::1 at 2023-01-30 14:28:21 +0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/mac/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/mac/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.4ms | Allocations: 528)
+Completed 200 OK in 27ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 4347)
+
+
+Started GET "/admin" for ::1 at 2023-01-30 14:30:14 +0700
+Processing by Admin::DashboardController#index as HTML
+  Rendering layout layouts/admin.slim
+  Rendering admin/dashboard/index.slim within layouts/admin
+  Rendered admin/dashboard/index.slim within layouts/admin (Duration: 15.4ms | Allocations: 10639)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 265c21ef43843d261b56
+Version: webpack 4.46.0
+Time: 1345ms
+Built at: 01/30/2023 2:30:18 PM
+                                     Asset       Size       Chunks                         Chunk Names
+          js/admin-02e06ddae1c4911c675c.js    135 KiB        admin  [emitted] [immutable]  admin
+      js/admin-02e06ddae1c4911c675c.js.map    148 KiB        admin  [emitted] [dev]        admin
+    js/application-7c18957c9f4dd43c2451.js    125 KiB  application  [emitted] [immutable]  application
+js/application-7c18957c9f4dd43c2451.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint admin = js/admin-02e06ddae1c4911c675c.js js/admin-02e06ddae1c4911c675c.js.map
+Entrypoint application = js/application-7c18957c9f4dd43c2451.js js/application-7c18957c9f4dd43c2451.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {admin} {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {admin} {application} [built]
+[./app/javascript/packs/admin.js] 428 bytes {admin} [built]
+[./app/javascript/packs/application.js] 530 bytes {application} [built]
+[./app/javascript/scss/admin/index.scss] 670 bytes {admin} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/javascript/scss/admin/index.scss] ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/javascript/scss/admin/index.scss 293 bytes {admin} [built] [failed] [1 error]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {admin} {application} [built]
+    + 4 hidden modules
+
+ERROR in ./app/javascript/scss/admin/index.scss (./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/javascript/scss/admin/index.scss)
+Module build failed (from ./node_modules/sass-loader/dist/cjs.js):
+SassError: Can't find stylesheet to import.
+  ╷
+2 │ @import '~bootstrap/scss/bootstrap';
+  │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  ╵
+  app/javascript/scss/admin/index.scss 2:9  root stylesheet
+ @ ./app/javascript/scss/admin/index.scss 2:26-231
+ @ ./app/javascript/packs/admin.js
+
+ERROR in ./app/javascript/packs/admin.js
+Module not found: Error: Can't resolve '@tabler/core/dist/css/tabler.min.css' in '/Users/mac/Documents/personal_branding/app/javascript/packs'
+ @ ./app/javascript/packs/admin.js 7:0-46
+
+ERROR in ./app/javascript/packs/admin.js
+Module not found: Error: Can't resolve '@tabler/core/dist/js/tabler.min' in '/Users/mac/Documents/personal_branding/app/javascript/packs'
+ @ ./app/javascript/packs/admin.js 12:2-43
+
+ERROR in ./app/javascript/packs/admin.js
+Module not found: Error: Can't resolve 'bootstrap/dist/js/bootstrap' in '/Users/mac/Documents/personal_branding/app/javascript/packs'
+ @ ./app/javascript/packs/admin.js 6:0-37
+
+ERROR in ./app/javascript/packs/application.js
+Module not found: Error: Can't resolve 'bootstrap/dist/js/bootstrap' in '/Users/mac/Documents/personal_branding/app/javascript/packs'
+ @ ./app/javascript/packs/application.js 9:0-37
+
+ERROR in ./node_modules/@rails/ujs/lib/assets/compiled/rails-ujs.js
+Module not found: Error: Can't resolve 'jquery' in '/Users/mac/Documents/personal_branding/node_modules/@rails/ujs/lib/assets/compiled'
+ @ ./node_modules/@rails/ujs/lib/assets/compiled/rails-ujs.js 1:0-17
+ @ ./app/javascript/packs/admin.js
+
+  Rendered layout layouts/admin.slim (Duration: 3440.7ms | Allocations: 20119)
+Completed 200 OK in 3445ms (Views: 3443.1ms | ActiveRecord: 0.0ms | Allocations: 21121)
+
+
+Started GET "/admin" for ::1 at 2023-01-30 14:32:29 +0700
+Processing by Admin::DashboardController#index as HTML
+  Rendering layout layouts/admin.slim
+  Rendering admin/dashboard/index.slim within layouts/admin
+  Rendered admin/dashboard/index.slim within layouts/admin (Duration: 0.1ms | Allocations: 38)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/admin.slim (Duration: 6.1ms | Allocations: 2745)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 3167)
+
+
+Started GET "/" for ::1 at 2023-01-30 18:14:38 +0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/mac/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/mac/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.6ms | Allocations: 420)
+Completed 200 OK in 18ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 3197)
+
+
+Started GET "/admin" for ::1 at 2023-01-30 18:14:46 +0700
+Processing by Admin::DashboardController#index as HTML
+  Rendering layout layouts/admin.slim
+  Rendering admin/dashboard/index.slim within layouts/admin
+  Rendered admin/dashboard/index.slim within layouts/admin (Duration: 10.5ms | Allocations: 10546)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/mac/Documents/personal_branding/public/packs
+[Webpacker] Hash: 3ed6fccb5b31f928b815
+Version: webpack 4.46.0
+Time: 7608ms
+Built at: 01/30/2023 6:14:55 PM
+                                     Asset       Size       Chunks                         Chunk Names
+        js/0-e3a1912bb5f7e240066d.chunk.js    200 KiB            0  [emitted] [immutable]  
+    js/0-e3a1912bb5f7e240066d.chunk.js.map    237 KiB            0  [emitted] [dev]        
+          js/admin-8aca2e5fefdf4aa796ba.js   2.22 MiB        admin  [emitted] [immutable]  admin
+      js/admin-8aca2e5fefdf4aa796ba.js.map    2.3 MiB        admin  [emitted] [dev]        admin
+    js/application-c8c57e992c73781d552f.js    792 KiB  application  [emitted] [immutable]  application
+js/application-c8c57e992c73781d552f.js.map    837 KiB  application  [emitted] [dev]        application
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint admin = js/admin-8aca2e5fefdf4aa796ba.js js/admin-8aca2e5fefdf4aa796ba.js.map
+Entrypoint application = js/application-c8c57e992c73781d552f.js js/application-c8c57e992c73781d552f.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {admin} {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {admin} {application} [built]
+[./app/javascript/packs/admin.js] 428 bytes {admin} [built]
+[./app/javascript/packs/application.js] 530 bytes {application} [built]
+[./app/javascript/scss/admin/index.scss] 670 bytes {admin} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/javascript/scss/admin/index.scss] ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/javascript/scss/admin/index.scss 844 KiB {admin} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 863 bytes {0} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {admin} {application} [built]
+    + 70 hidden modules
+
+  Rendered layout layouts/admin.slim (Duration: 9327.4ms | Allocations: 20664)
+Completed 200 OK in 9333ms (Views: 9329.0ms | ActiveRecord: 0.0ms | Allocations: 21666)
+
+
