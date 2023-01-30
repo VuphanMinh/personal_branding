@@ -1661,7 +1661,7 @@ bootstrap@^5.2.3:
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.2.3.tgz#54739f4414de121b9785c5da3c87b37ff008322b"
   integrity sha512-cEKPM+fwb3cT8NzQZYEu4HilJ3anCrWqh3CHAok1p9jXqMPsPTBhU25fBckEJHJ/p+tTxTFTsFQGM+gaHpi3QQ==
 
-"bootstrap@github:twbs/bootstrap#232e392c9126fcb1dbe13c963e7edcdbd62cfeb8":
+bootstrap@twbs/bootstrap#232e392c9126fcb1dbe13c963e7edcdbd62cfeb8:
   version "5.0.0-beta3"
   resolved "https://codeload.github.com/twbs/bootstrap/tar.gz/232e392c9126fcb1dbe13c963e7edcdbd62cfeb8"
 
