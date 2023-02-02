@@ -11,6 +11,8 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+require.context('../images', true);
+
 document.addEventListener('turbolinks:load', () => {
     import('@tabler/core/dist/js/tabler.min');
 });  
