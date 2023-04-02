@@ -1016,3 +1016,5 @@ p
 #collapseExample.collapse
   .card.card-body
     |  Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger. 
+
+= link_to 'Logout', destroy_user_session_path(go_back_to_admin_login_page: true), method: :delete, class: 'dropdown-item'

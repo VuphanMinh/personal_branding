@@ -10,33 +10,33 @@ html
     = javascript_pack_tag 'admin', 'data-turbolinks-track': 'reload'
   body.theme-light
     .page
-      = render 'layouts/admin/aside'
+      = render 'layouts/admin/aside' unless controller.controller_name == 'sessions'
       .page-wrapper
         / ================= Pages Header =================
-        .page-header.d-print-none
-          .container-xl
-            .row.g-2.align-items-center
-              .col
-                .page-pretitle
-                  |  Overview 
-                h2.page-title
-                  |  Admin Persional Branding 
-              .col-auto.ms-auto.d-print-none
-                .btn-list
-                  span.d-none.d-sm-inline
-                    a.btn[href="#"]
-                      |  New view 
-                  a.btn.btn-primary.d-none.d-sm-inline-block[href="#" data-bs-toggle="modal" data-bs-target="#modal-report"]
-                    svg.icon[xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"]
-                      path[stroke="none" d="M0 0h24v24H0z" fill="none"]
-                      path[d="M12 5l0 14"]
-                      path[d="M5 12l14 0"]
-                    |  Create new report 
-                  a.btn.btn-primary.d-sm-none.btn-icon[href="#" data-bs-toggle="modal" data-bs-target="#modal-report" aria-label="Create new report"]
-                    svg.icon[xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"]
-                      path[stroke="none" d="M0 0h24v24H0z" fill="none"]
-                      path[d="M12 5l0 14"]
-                      path[d="M5 12l14 0"]
+        / .page-header.d-print-none
+        /   .container-xl
+        /     .row.g-2.align-items-center
+        /       .col
+        /         .page-pretitle
+        /           |  Overview 
+        /         h2.page-title
+        /           |  Admin Persional Branding 
+        /       .col-auto.ms-auto.d-print-none
+        /         .btn-list
+        /           span.d-none.d-sm-inline
+        /             a.btn[href="#"]
+        /               |  New view 
+        /           a.btn.btn-primary.d-none.d-sm-inline-block[href="#" data-bs-toggle="modal" data-bs-target="#modal-report"]
+        /             svg.icon[xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"]
+        /               path[stroke="none" d="M0 0h24v24H0z" fill="none"]
+        /               path[d="M12 5l0 14"]
+        /               path[d="M5 12l14 0"]
+        /             |  Create new report 
+        /           a.btn.btn-primary.d-sm-none.btn-icon[href="#" data-bs-toggle="modal" data-bs-target="#modal-report" aria-label="Create new report"]
+        /             svg.icon[xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"]
+        /               path[stroke="none" d="M0 0h24v24H0z" fill="none"]
+        /               path[d="M12 5l0 14"]
+        /               path[d="M5 12l14 0"]
 
         / ================= Pages Body =================
         .page-body

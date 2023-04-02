@@ -1,0 +1,25 @@
+.page.page-center
+  .container-tight.py-4
+    .text-center.mb-4
+      a.navbar-brand.navbar-brand-autodark href="."
+        = image_pack_tag 'tabler.svg', height: '60', alt: 'Tabler'
+    = simple_form_for(resource, as: resource_name, url: admin_login_path, autocomplete: "off", method: :post) do |f|
+      .card-body
+        h2.card-title.text-center.mb-4 Login to your account
+        .mb-3
+          label.form-label Email address
+          = f.email_field :email, class: "form-control", placeholder: "Enter email"
+        .mb-2
+          label.form-label
+            | Password
+          .input-group.input-group-flat
+            = f.password_field :password, class: "form-control", placeholder: "Password", autocomplete: "off"
+            span.input-group-text
+              a.link-secondary data-bs-original-title=("Show password") data-bs-toggle="tooltip" href="#" title=""
+                /! Download SVG icon from http://tabler-icons.io/i/eye
+                svg.icon fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox=("0 0 24 24") width="24" xmlns="http://www.w3.org/2000/svg"
+                  path d=("M0 0h24v24H0z") fill="none" stroke="none"
+                  circle cx="12" cy="12" r="2"
+                  path d=("M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7")
+        .form-footer
+          = f.button :submit, 'Sign in', class: 'btn btn-primary w-100'
