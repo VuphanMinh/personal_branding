@@ -1001,20 +1001,3 @@
                 g#jvm-lines-group
                 g#jvm-markers-group
                 g#jvm-markers-labels-group
-
-
-
-
-
-
-p
-  a.btn.btn-primary[data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"]
-    |  Link with href 
-  button.btn.btn-primary[type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"]
-    |  Button with data-bs-target 
-
-#collapseExample.collapse
-  .card.card-body
-    |  Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger. 
-
-= link_to 'Logout', destroy_user_session_path(go_back_to_admin_login_page: true), method: :delete, class: 'dropdown-item'

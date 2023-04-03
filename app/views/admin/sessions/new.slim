@@ -1,8 +1,8 @@
 .page.page-center
-  .container-tight.py-4
+  .container.container-tight.py-4
     .text-center.mb-4
       a.navbar-brand.navbar-brand-autodark href="."
-        = image_pack_tag 'tabler.svg', height: '60', alt: 'Tabler'
+        = image_pack_tag 'logo.svg', height: '60', alt: 'Tabler'
     = simple_form_for(resource, as: resource_name, url: admin_login_path, autocomplete: "off", method: :post) do |f|
       .card-body
         h2.card-title.text-center.mb-4 Login to your account
