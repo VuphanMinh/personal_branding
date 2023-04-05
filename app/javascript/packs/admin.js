@@ -6,6 +6,11 @@ import "channels"
 import '../scss/admin/index.scss';
 import 'bootstrap/dist/js/bootstrap';
 import '@tabler/core/dist/css/tabler.min.css';
+import "../scss/admin/actiontext.scss";
+import './actiontext.css';
+
+require("trix")
+require("@rails/actiontext")
 
 Rails.start()
 Turbolinks.start()

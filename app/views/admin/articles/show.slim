@@ -1,0 +1,31 @@
+.card.card-lg
+  .card-body
+    h1.m-0 Article details
+    .row
+      table.table.table-vcenter
+        tbody
+          tr
+            th Title
+            td = @article.title
+          tr
+            th Image
+            td = image_tag @article.image_url.to_s, width: '150px'
+          tr
+            th Description
+            td
+              .card
+                .card-status-start.bg-primary
+                .card-body
+                  = @article[:description].to_s.html_safe
+          tr
+            th Content
+            td
+              .card
+                .card-status-start.bg-primary
+                .card-body
+                  = @article[:content].to_s.html_safe
+
+    .row.mt-20
+      .col-12
+        .d-flex.justify-content-end
+          = link_to 'Back to list', admin_articles_path, class: "btn btn-danger mr-20"

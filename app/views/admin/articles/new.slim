@@ -1,0 +1,13 @@
+#articles-index-container
+  .page-header
+    .row.align-items-center
+      .col
+        .page-pretitle
+          | New Article
+
+  .page-body
+    .row
+      .col-md-12.col-lg-12
+        .row
+          .col-md-6.col-xl-12
+            = render partial: 'form', locals: { article: @article, url: admin_articles_path, method: 'post' }
