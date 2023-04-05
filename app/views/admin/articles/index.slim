@@ -1,0 +1,38 @@
+#articles-index-container
+  .page-header
+    .row.align-items-center
+      .col
+        .page-pretitle
+          h1 List Articles
+      /! Page title actions
+      .col-auto.ms-auto.d-print-none
+        = link_to new_admin_article_path, class: 'btn btn-success'
+          /! Download SVG icon from http://tabler-icons.io/i/plus
+          svg.icon fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox=("0 0 24 24") width="24" xmlns="http://www.w3.org/2000/svg"
+            path d=("M0 0h24v24H0z") fill="none" stroke="none"
+            line x1="12" x2="12" y1="5" y2="19"
+            line x1="5" x2="19" y1="12" y2="12"
+          | Create a new article
+  .page-body
+    .row.row-deck.row-cards
+
+      .col-md-12.col-lg-12
+        .card
+          .table-responsive
+            table.table.card-table.table-vcenter
+              thead
+                tr
+                  th Title
+                  th Image
+                  th Action
+              tbody
+                - @articles.each do |article|
+                  tr
+                    td = article.title
+                    td = image_tag article.image_url.to_s, width: '100px'
+                    td
+                      .d-flex
+                        = link_to 'Edit', edit_admin_article_path(id: article.id), class: 'btn btn-warning mr-10'
+                        = link_to 'Detail', admin_article_path(article), class: 'btn btn-info w-20 mr-10'
+                        = link_to 'Delete', admin_article_path(article), method: :delete, data: { confirm: 'Are you sure you want to proceed?' }, class: 'btn btn-danger'
+            == pagy_bootstrap_nav(@pagy)
